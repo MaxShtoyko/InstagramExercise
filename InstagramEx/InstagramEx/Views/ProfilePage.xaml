@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:InstagramEx.ViewModels;assembly=InstagramEx"
+             x:Class="InstagramEx.ProfilePage"
+             Title="Facebook Profile"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <viewModels:FacebookViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout x:Name="MainStackLayout"
+               Padding="8,30">
+
+        <Image Source="{Binding FacebookProfile.Picture.Data.Url}"
+             HeightRequest="50"
+             WidthRequest="50"
+             VerticalOptions="Start"/>
+        
+
+        <StackLayout Orientation="Vertical" x:Name="user">
+
+            <Label Text="Name:"/>
+            <Entry Text="{Binding Name, Mode=TwoWay}"
+            TextColor="Black"
+            FontSize="22"
+            IsEnabled="False"/>
+            
+            <Label Text="Login:"/>
+            <Entry Text="{Binding Login, Mode=TwoWay}"
+            TextColor="Black"
+            FontSize="20"
+            IsEnabled="False"/>
+
+            <Label Text="Gender:"/>
+            <Entry Text="{Binding Gender, Mode=TwoWay}"
+            TextColor="Black"
+            FontSize="20"
+            Completed="Gender_Completed"/>
+
+        </StackLayout>
+
+
+    </StackLayout>
+
+</ContentPage>

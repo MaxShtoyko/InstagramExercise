@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:InstagramEx"
+             x:Class="InstagramEx.CameraPage">
+    <Grid Padding="10,20,10,10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Label
+              Text="Last Photo:"
+              HorizontalTextAlignment="Center"
+              FontSize="20"/>
+        <Image
+              x:Name="image"
+              Grid.Row="1"
+              BackgroundColor="#F0F0F0"/>
+        <Button
+              Text="Take Photo"
+              BackgroundColor="Lime"
+              Grid.Row="2"
+              Clicked="TakePhoto_Clicked"/>
+    </Grid>
+
+</ContentPage>

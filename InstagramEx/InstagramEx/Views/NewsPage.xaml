@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:InstagramEx;assembly=InstagramEx"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="InstagramEx.NewsPage">
+    <StackLayout>
+        <ListView x:Name="imageList"
+              HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Publisher}" TextColor="Black"/>
+                                <Label Text="{Binding Date}" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                            <Image Source="{Binding Path}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
